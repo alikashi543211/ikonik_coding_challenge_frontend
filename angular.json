@@ -28,10 +28,10 @@
               "src/styles.css"
             ],
             "scripts": [
-                "assets/user/js/app.js",
-                "assets/user/js/jquery.min.js",
-                "assets/user/js/helper.js",
-                "assets/user/js/main.js"
+                "src/assets/user/js/app.js",
+                "src/assets/user/js/jquery.min.js",
+                "src/assets/user/js/helper.js",
+                "src/assets/user/js/main.js"
             ]
           },
           "configurations": {
