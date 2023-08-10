@@ -12,6 +12,8 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { ConnectionRequestComponent } from './connection-request/connection-request.component';
+import { NetworkConnectionComponent } from './network-connection/network-connection.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { ProfileComponent } from './profile/profile.component';
         LoginComponent,
         EventsComponent,
         SpecialEventsComponent,
-        ProfileComponent
+        ProfileComponent,
+        ConnectionRequestComponent,
+        NetworkConnectionComponent
     ],
     imports: [
         BrowserModule,

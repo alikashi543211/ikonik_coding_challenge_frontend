@@ -6,6 +6,8 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { EventsComponent } from './events/events.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConnectionRequestComponent } from './connection-request/connection-request.component';
+import { NetworkConnectionComponent } from './network-connection/network-connection.component';
 
 const routes: Routes = [
     {
@@ -23,6 +25,16 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'connection_request',
+        component: ConnectionRequestComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'connection_request/connections',
+        component: NetworkConnectionComponent,
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'profile',
         component: ProfileComponent,
         canActivate: [AuthGuard]
@@ -34,6 +46,11 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: 'user-network',
+        loadChildren: () => import('./user-network/user-network.module').then(m => m.UserNetworkModule),
+        canActivate: [AuthGuard]
     }
 ];
 

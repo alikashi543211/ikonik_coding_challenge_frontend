@@ -1,0 +1,78 @@
+<span class="fw-bold">Connections</span>
+<div class="my-2 shadow text-white bg-dark p-1" *ngFor="let item of data">
+    <div class="d-flex justify-content-between">
+        <table class="ms-1">
+            <td class="align-middle">{{ item.name }}</td>
+            <td class="align-middle">-</td>
+            <td class="align-middle">{{ item.email }}</td>
+            <td class="align-middle"></td>
+        </table>
+
+        <div>
+            <button
+                style="width: 220px"
+                id="get_connections_in_common_"
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse_"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+            >
+                Connections in common ()
+            </button>
+            <button
+                id="create_request_btn_"
+                class="btn btn-danger me-1"
+            >
+                Remove Connection
+            </button>
+        </div>
+    </div>
+    <div class="collapse" id="collapse_">
+        <div id="content_" class="p-2">
+            <div
+                class="p-2 shadow rounded mt-2 text-white bg-dark"
+            >
+                Name - Email
+            </div>
+        </div>
+        <div id="connections_in_common_skeletons_"></div>
+        <div class="d-flex justify-content-center w-100 py-2">
+            <button
+                class="btn btn-sm btn-primary"
+                id="load_more_connections_in_common_"
+            >
+                Load more
+            </button>
+        </div>
+    </div>
+</div>
+<div
+    class="d-flex justify-content-center mt-2 py-3"
+    id="load_more_btn_parent"
+>
+    <button
+        class="btn btn-primary"
+        onclick=""
+        id="load_more_btn"
+    >
+        Load more
+    </button>
+</div>
+<div id="connections_in_common_skeleton" class="">
+    <br />
+    <div class="px-2">
+        <div
+            class="d-flex align-items-center mb-2 text-white bg-dark p-1 shadow"
+            style="height: 45px"
+        >
+            <strong class="ms-1 text-primary">Loading...</strong>
+            <div
+                class="spinner-border ms-auto text-primary me-4"
+                role="status"
+                aria-hidden="true"
+            ></div>
+        </div>
+    </div>
+</div>

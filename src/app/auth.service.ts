@@ -7,9 +7,6 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
     private _baseUrl = "http://127.0.0.1:8000/api/"
-    private _registerUrl = "http://127.0.0.1:8000/api/auth/user"
-    private _loginUrl = "http://click_learning.test/api/auth/login"
-    private _getUserUrl = "http://click_learning.test/api/parent/profile/getParentDetail"
     constructor(private _httpClient: HttpClient, private _router:Router) { }
 
     registerUser(user) {
