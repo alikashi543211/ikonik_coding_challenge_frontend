@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit{
     ngOnInit() {
         this._authService.getLoggedInUser().subscribe(res => {
             this.user = res.data;
+            console.log(this.user);
         });
     }
 }

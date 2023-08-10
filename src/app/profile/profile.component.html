@@ -5,24 +5,17 @@
                 <h3 class="mb-0">My Profile</h3>
             </div>
             <div class="card-body">
+                <div class="alert alert-info"><strong>Welcome</strong> {{ user.name }} </div>
                 <p class="text-center">
                     <img [src]="user.photo" width="150" alt="">
                 </p>
                 <p>
-                    <strong>First Name : </strong>
-                    <span>{{ user.first_name }}</span>
-                </p>
-                <p>
-                    <strong>Last Name : </strong>
-                    <span>{{ user.last_name }}</span>
+                    <strong>Name : </strong>
+                    <span>{{ user.name }}</span>
                 </p>
                 <p>
                     <strong>Email : </strong>
                     <span>{{ user.email }}</span>
-                </p>
-                <p>
-                    <strong>Zip Code : </strong>
-                    <span>{{ user.zip_code }}</span>
                 </p>
             </div>
         </div>
