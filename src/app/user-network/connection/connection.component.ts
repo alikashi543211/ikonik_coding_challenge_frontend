@@ -13,8 +13,22 @@ export class ConnectionComponent implements OnInit {
     constructor(private _userNetworkService: UserNetworkService) {}
 
     ngOnInit() {
+        this.list();
+    }
+
+    list() {
         this._userNetworkService.connectionList().subscribe(res => {
             this.data = res.data;
+        });
+    }
+
+    remove(userId:any)
+    {
+        var data = {
+            receiver_id: userId,
+        }
+        this._userNetworkService.removeConnection(data).subscribe(res => {
+            this.list();
         });
     }
 }

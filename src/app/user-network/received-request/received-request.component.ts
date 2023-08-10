@@ -12,8 +12,23 @@ export class ReceivedRequestComponent implements OnInit {
     constructor(private _userNetworkService: UserNetworkService) {}
 
     ngOnInit() {
+        this.list();
+    }
+
+    list()
+    {
         this._userNetworkService.receivedRequestList().subscribe(res => {
             this.data = res.data;
+        });
+    }
+
+    accept(userId:any)
+    {
+        var data = {
+            receiver_id: userId,
+        }
+        this._userNetworkService.acceptConnection(data).subscribe(res => {
+            this.list();
         });
     }
 }

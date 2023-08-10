@@ -13,8 +13,23 @@ export class SuggestionComponent implements OnInit {
     constructor(private _userNetworkService: UserNetworkService) {}
 
     ngOnInit() {
+        this.list();
+    }
+
+    list()
+    {
         this._userNetworkService.suggestionList().subscribe(res => {
             this.data = res.data;
+        });
+    }
+
+    sendConnectionToUser(userId:any)
+    {
+        var data = {
+            receiver_id: userId,
+        }
+        this._userNetworkService.sendConnection(data).subscribe(res => {
+            this.list();
         });
     }
 }

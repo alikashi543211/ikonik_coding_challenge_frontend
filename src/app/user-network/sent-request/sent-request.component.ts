@@ -12,8 +12,23 @@ export class SentRequestComponent implements OnInit {
     constructor(private _userNetworkService: UserNetworkService) {}
 
     ngOnInit() {
+        this.list();
+    }
+
+    list()
+    {
         this._userNetworkService.sentRequestList().subscribe(res => {
             this.data = res.data;
+        });
+    }
+
+    withdraw(userId:any)
+    {
+        var data = {
+            receiver_id: userId,
+        }
+        this._userNetworkService.withdrawSentRequest(data).subscribe(res => {
+            this.list();
         });
     }
 }
